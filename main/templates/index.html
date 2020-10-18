@@ -1,0 +1,182 @@
+<html>
+{% extends 'base.html' %}
+<body>
+
+{% block content %}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+        <!--<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                class="fas fa-download fa-sm text-white-50"></i> Download </a>-->
+    </div>
+</div>
+<div class="row">
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2" style="margin-left:10%;">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">Aggregate Table</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fa fa-link fa-2x text-gray-300"></i>
+                    </div>
+                    <a href="" class="stretched-link" onClick="return mainFunction();"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Earnings (Annual) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1"></div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">Mulesoft Logs</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fa fa-link fa-2x text-gray-300"></i>
+                    </div>
+                    <a href="" class="stretched-link" onClick="return mskibFunction();"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tasks Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-info shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1"></div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">SFDC Transaction logs</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fa fa-link fa-2x text-gray-300"></i>
+                    </div>
+                    <a href="" class="stretched-link" onClick="return sfdckib1Function();"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pending Requests Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2" style="margin-right:10%;">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1"></div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">SFDC Event Logs</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fa fa-link fa-2x text-gray-300"></i>
+                    </div>
+                    <a href="" class="stretched-link" onClick="return sfdckib2Function();"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    iframe { border: 0; width: 100%; height: 65%; }
+
+    </style>
+
+<div id="main">
+    <iframe src="http://10.235.21.123:5601/app/dashboards#/view/e5b5e950-f9c1-11ea-b864-79745279dae1?embed=true&_g=(filters%3A!()%2CrefreshInterval%3A(pause%3A!t%2Cvalue%3A0)%2Ctime%3A(from%3Anow-1y%2Cto%3Anow))"></iframe>
+</div>
+
+<div id="mskib">
+    <iframe src="http://10.235.21.123:5601/app/visualize#/edit/335004e0-0983-11eb-b864-79745279dae1?embed=true&_g=(filters%3A!()%2CrefreshInterval%3A(pause%3A!t%2Cvalue%3A0)%2Ctime%3A(from%3Anow-1y%2Cto%3Anow))"></iframe>
+
+</div>
+
+<div id="sdfckib1">
+    <iframe src="http://10.235.21.123:5601/app/visualize#/edit/4129d3e0-0986-11eb-b864-79745279dae1?embed=true&_g=(filters%3A!()%2CrefreshInterval%3A(pause%3A!t%2Cvalue%3A0)%2Ctime%3A(from%3Anow-1y%2Cto%3Anow))"></iframe>
+</div>
+
+<div id="sfdckib2">
+    <iframe src="http://10.235.21.123:5601/app/visualize#/edit/4129d3e0-0986-11eb-b864-79745279dae1?embed=true&_g=(filters%3A!()%2CrefreshInterval%3A(pause%3A!t%2Cvalue%3A0)%2Ctime%3A(from%3Anow-1y%2Cto%3Anow))"></iframe>
+
+</div>
+<script>
+document.getElementById('main').style.display = 'block';
+document.getElementById('mskib').style.display = 'none';
+document.getElementById('sdfckib1').style.display = 'none';
+document.getElementById('sfdckib2').style.display = 'none';
+
+function mainFunction() {
+var x = document.getElementById("main");
+var y = document.getElementById("mskib");
+var z = document.getElementById("sdfckib1");
+var w = document.getElementById("sfdckib2");
+
+
+x.style.display = "block";
+y.style.display = "none";
+z.style.display = "none";
+w.style.display = "none";
+return false;
+
+}
+
+function mskibFunction() {
+var x = document.getElementById("main");
+var y = document.getElementById("mskib");
+var z = document.getElementById("sdfckib1");
+var w = document.getElementById("sfdckib2");
+
+
+x.style.display = "none";
+y.style.display = "block";
+z.style.display = "none";
+w.style.display = "none";
+return false;
+
+}
+
+function sfdckib1Function() {
+var x = document.getElementById("main");
+var y = document.getElementById("mskib");
+var z = document.getElementById("sdfckib1");
+var w = document.getElementById("sfdckib2");
+
+
+x.style.display = "none";
+y.style.display = "none";
+z.style.display = "block";
+w.style.display = "none";
+return false;
+
+}
+
+function sfdckib2Function() {
+var x = document.getElementById("main");
+var y = document.getElementById("mskib");
+var z = document.getElementById("sdfckib1");
+var w = document.getElementById("sfdckib2");
+
+
+x.style.display = "none";
+y.style.display = "none";
+z.style.display = "none";
+w.style.display = "block";
+return false;
+
+}
+
+
+</script>
+{% endblock %}
+</body>
+
+</html>

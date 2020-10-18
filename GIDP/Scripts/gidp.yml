@@ -1,0 +1,40 @@
+sf_login:
+    username: file.validator@nttdata.gidpamdev1
+    password: P@ssw0rd
+    sec_token: BRcvMGc9O5OrYl32pP9Vid03
+
+sf_transaction_log:
+    col_name: GxDP_CorrelationId__c, GxDP_Message__c, CreatedDate
+    table_name: GxDP_TransactionLog__c
+
+sf_event_log:
+    col_name: GiDp_message__c
+    table_name: GiDP_EventLog__c
+
+mulesoft:
+    username: Rinku96
+    password: Nttdata@123
+    envid: 53b68bcc-df9f-41ba-9294-5f8f77901e0f
+    insid: 5f6e53257b184372d0ae7d7c-0
+    domain: gxdp-runtime-prc-api-tagdev
+
+
+mysql:
+  user: gidp
+  password: Gidp@123
+  host: 10.235.21.123
+  database: Gidp
+
+Tablenames:
+  Mulesoft: 'mule1'
+  Salesforce: 'sfdc1'
+
+
+Mulesoft:
+  Columns: ['CorrelationID','TransactionType',' Date' ,' MulesoftRequest','SalesforceResponse']
+  RequestField: ['correlationID', 'parentCorrelationID', 'eventName','sourceNameSpace','claimId','date']
+  ResponseField: ['transactionLogId','success','message']
+
+sfdc:
+  Columns: ['CorrelationID','TransactionType',' Date' ,' objectlink']
+  Fields:  ['correlationID','parentCorrelationID', 'sourceNameSpace','eventName','message','claimId','success']

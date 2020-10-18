@@ -1,0 +1,127 @@
+{
+    "gXdpApi": {
+        "correlationID": "d04edcac-07bb-ea11-80d5-005056b401ff",
+        "transactionType": {
+            "sourceNameSpace": "LIFESYS",
+            "eventName": "SUBMITCLAIMANDDOCUMENT",
+            "targetNameSpace": "GIDP",
+            "operation": "POST"
+        },
+        "gIdpPayLoad": {
+            "claim": {
+                "contractId": "A0093568",
+                "claimId": "1328",
+                "product": {
+                    "type": "CANCER"
+                },
+                "submission": {
+                    "channel": "Customer Portal",
+                    "signatureFlag": false,
+                    "signatureDate": "2020-06-25T00:00:00.000Z",
+                    "submitterName": "ODYA CHISTON",
+                    "relationShipPrimaryInsured": "Self"
+                },
+                "incidents": [
+                    {
+                        "type": "CANCER",
+                        "motorVehicleFlag": false,
+                        "policeReportFlag": false,
+                        "onTheJobFlag": false,
+                        "providers": [
+                            {
+                                "type": "PHYSICIAN",
+                                "address": {
+                                    "type": "PRIMARY",
+                                    "addressLine1": "PO Box 1234, Lorence Wall''s Rd",
+                                    "city": "Boston",
+                                    "state": "MA",
+                                    "postalCode": "12312-3213"
+                                },
+                                "firstName": "Kevin",
+                                "lastName": "Yokoum",
+                                "middleName": "d"
+                            }
+                        ],
+                        "conditionRecurrenceFlag": true,
+                        "firstConsultationDateforCondition": "2020-06-14T00:00:00.000Z",
+                        "diagnosisDate": "2020-06-20T00:00:00.000Z"
+                    }
+                ],
+                "parties": [
+                    {
+                        "type": "PERSON",
+                        "address": {
+                            "type": "PRIMARY",
+                            "addressLine1": "1612 CALLE LAS CASAS",
+                            "city": "OCEANSIDE",
+                            "state": "CA",
+                            "postalCode": "92056"
+                        },
+                        "phone": {
+                            "type": "CELL",
+                            "phoneNumber": "1111111111"
+                        },
+                        "taxId": "XXX.XX.0763",
+                        "person": {
+                            "type": "PRIMARYINSURED",
+                            "firstName": "ODYA",
+                            "lastName": "CHISTON",
+                            "middleName": "A",
+                            "dateofBirth": "1996-04-04T00:00:00.000Z",
+                            "sex": "M",
+                            "employerName": "AUTONATION, INC."
+                        }
+                    },
+                    {
+                        "type": "PERSON",
+                        "address": {
+                            "type": "PRIMARY",
+                            "addressLine1": "PO Box 1123",
+                            "city": "Boston",
+                            "state": "MA",
+                            "postalCode": "111111111"
+                        },
+                        "phone": {
+                            "type": "CELL",
+                            "phoneNumber": "2222222222"
+                        },
+                        "relationshipToInsured": "SPOUSE",
+                        "taxId": "XXX.XX.3214",
+                        "person": {
+                            "type": "CLAIMANT",
+                            "firstName": "Krystal",
+                            "lastName": "Sampson",
+                            "middleName": "M",
+                            "dateofBirth": "1961-08-15T00:00:00.000Z",
+                            "sex": "F"
+                        }
+                    }
+                ],
+                "documents": [
+                    {
+                        "documentId": "1ad0203d-0134-496b-b870-6a7f1c7900b5.PDF",
+                        "creationDate": "2020-06-25T11:50:36.000Z",
+                        "name": "1ad0203d-0134-496b-b870-6a7f1c7900b5.PDF",
+                        "description": "E-CLAIM SET UP",
+                        "pageCount": 7,
+                        "typeOfDocument": "PDF",
+                        "typeOfContent": "METADATA",
+                        "contentStream": {
+                            "type": "METADATA",
+                            "body": {}
+                        }
+                    }
+                ]
+            },
+            "addOnProperties": {
+                "LIFESYS": {
+                    "claim": {
+                        "system": "LSN",
+                        "company": "9X",
+                        "clientName": "GIDPMET"
+                    }
+                }
+            }
+        }
+    }
+}

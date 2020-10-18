@@ -1,0 +1,191 @@
+Watching for file changes with StatReloader
+/home/cresta/Hilton/ADVAR/Connectors/Scripts/Testcases.py:18: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  cfg = yaml.load(ymlfile)
+/home/cresta/Hilton/ADVAR/Connectors/views.py:16: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  cfg = yaml.load(ymlfile)
+Watching for file changes with StatReloader
+/home/cresta/Hilton/ADVAR/Connectors/Scripts/Testcases.py:18: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  cfg = yaml.load(ymlfile)
+/home/cresta/Hilton/ADVAR/Connectors/views.py:16: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  cfg = yaml.load(ymlfile)
+[23/Jan/2020 07:35:17] "GET /Connectors/ HTTP/1.1" 200 5694
+[23/Jan/2020 07:35:31] "GET /Connectors/ HTTP/1.1" 200 5694
+[23/Jan/2020 07:35:32] "GET /Connectors/ HTTP/1.1" 200 5694
+[23/Jan/2020 07:35:43] "POST /Connectors/reports/ HTTP/1.1" 200 4146
+[23/Jan/2020 07:35:43] "GET /static/images/1.jpeg HTTP/1.1" 404 1666
+[23/Jan/2020 07:35:53] "GET /Hilton/ HTTP/1.1" 200 7064
+[23/Jan/2020 07:35:58] "POST /Hilton/reports/ HTTP/1.1" 200 2956
+[23/Jan/2020 07:36:01] "GET /Hilton/reports/results/BookValidate1.xlsx/ HTTP/1.1" 200 5401
+[23/Jan/2020 07:36:04] "GET /Hilton/download/BookValidate1/ HTTP/1.1" 200 5090
+[23/Jan/2020 14:00:38] "GET /Connectors/ HTTP/1.1" 200 5694
+[23/Jan/2020 14:00:38] "GET /static/images/nttdata2.png HTTP/1.1" 200 9770
+[23/Jan/2020 14:00:38] "GET /static/images/nttdata.png HTTP/1.1" 200 21363
+[23/Jan/2020 14:00:38] "GET /static/images/connector.jpeg HTTP/1.1" 200 18026
+[23/Jan/2020 14:00:38] "GET /static/images/logo.png HTTP/1.1" 200 46981
+Not Found: /favicon.ico
+[23/Jan/2020 14:00:38] "GET /favicon.ico HTTP/1.1" 404 2304
+[23/Jan/2020 14:00:52] "GET /Connectors/ HTTP/1.1" 200 5694
+[23/Jan/2020 14:00:52] "GET /static/images/nttdata.png HTTP/1.1" 200 21363
+[23/Jan/2020 14:00:52] "GET /static/images/nttdata2.png HTTP/1.1" 200 9770
+[23/Jan/2020 14:00:52] "GET /static/images/connector.jpeg HTTP/1.1" 200 18026
+[23/Jan/2020 14:00:52] "GET /static/images/logo.png HTTP/1.1" 200 46981
+Not Found: /favicon.ico
+[23/Jan/2020 14:00:52] "GET /favicon.ico HTTP/1.1" 404 2304
+[23/Jan/2020 14:02:20] "GET /Hilton/ HTTP/1.1" 200 7064
+[23/Jan/2020 14:02:20] "GET /static/images/Hilton-Logo.png HTTP/1.1" 200 92903
+[23/Jan/2020 14:02:20] "GET /static/images/login.png HTTP/1.1" 200 4963
+[23/Jan/2020 14:02:20] "GET /static/images/icons8-search-26.png HTTP/1.1" 200 447
+[23/Jan/2020 14:02:35] "GET /Hilton/ HTTP/1.1" 200 7064
+[23/Jan/2020 14:02:36] "GET /static/images/Hilton-Logo.png HTTP/1.1" 200 92903
+[23/Jan/2020 14:02:36] "GET /static/images/login.png HTTP/1.1" 200 4963
+[23/Jan/2020 14:02:36] "GET /static/images/icons8-search-26.png HTTP/1.1" 200 447
+[24/Jan/2020 06:18:41] "GET /Hilton/ HTTP/1.1" 200 7064
+Not Found: /favicon.ico
+[24/Jan/2020 06:18:41] "GET /favicon.ico HTTP/1.1" 404 2304
+[24/Jan/2020 06:18:46] "POST /Hilton/reports/ HTTP/1.1" 200 2450
+[24/Jan/2020 06:18:47] "GET /Hilton/reports/results/BookValidate1.xlsx/ HTTP/1.1" 200 5401
+[24/Jan/2020 06:18:54] "POST /Hilton/reports/ HTTP/1.1" 200 1462
+[24/Jan/2020 06:21:05] "GET /Connectors/ HTTP/1.1" 200 5694
+[24/Jan/2020 06:21:06] "GET /static/images/connector.jpeg HTTP/1.1" 304 0
+[24/Jan/2020 06:21:19] "POST /Connectors/reports/ HTTP/1.1" 200 4146
+[24/Jan/2020 06:21:19] "GET /static/images/1.jpeg HTTP/1.1" 404 1666
+Performing system checks...
+
+/home/cresta/Hilton/ADVAR
+/home/cresta/Hilton/ADVAR
+System check identified no issues (0 silenced).
+January 23, 2020 - 07:35:07
+Django version 2.2.8, using settings 'ADVAR.settings'
+Starting development server at http://10.235.21.27:4545/
+Quit the server with CONTROL-C.
+Testcases || Description                          	              || Status
+==============================================================================
+0
+1
+2
+3
+4
+5
+6
+7
+TestCase1 || XML notice count should match notices present in the pdf || Pass
+------------------------------------------------------------------------------
+TestCase2 || PDF should have correct page count and sheet count       || Pass
+------------------------------------------------------------------------------
+TestCase3 || XML element reportField1 should contain correct doc type || Pass
+------------------------------------------------------------------------------
+TestCase4 || XML element reportField2 should contain correct language || Pass
+------------------------------------------------------------------------------
+/home/cresta/Hilton/ADVAR
+['corporateBooking.txt', 'Corporate_response.txt']
+['corporateBooking.txt', 'Corporate_response1.txt']
+['book_Validate.txt', 'Response_BookValidate.txt']
+['Cancel.txt', 'cancel_Response.txt']
+Hilton/Reports/BookValidate1.xlsx
+BookValidate1
+/home/cresta/Hilton/ADVAR
+['corporateBooking.txt', 'Corporate_response.txt']
+['corporateBooking.txt', 'Corporate_response1.txt']
+['book_Validate.txt', 'Response_BookValidate.txt']
+Hilton/Reports/BookValidate1.xlsx
+/home/cresta/Hilton/ADVAR
+['Cancel.txt', 'cancel_Response.txt']
+Testcases || Description                          	              || Status
+==============================================================================
+0
+1
+2
+3
+4
+5
+6
+7
+TestCase1 || XML notice count should match notices present in the pdf || Pass
+------------------------------------------------------------------------------
+TestCase2 || PDF should have correct page count and sheet count       || Pass
+------------------------------------------------------------------------------
+TestCase3 || XML element reportField1 should contain correct doc type || Pass
+------------------------------------------------------------------------------
+TestCase4 || XML element reportField2 should contain correct language || Pass
+------------------------------------------------------------------------------
+Watching for file changes with StatReloader
+/home/cresta/Hilton/ADVAR/Connectors/Scripts/Testcases.py:18: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  cfg = yaml.load(ymlfile)
+/home/cresta/Hilton/ADVAR/Connectors/views.py:17: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  cfg = yaml.load(ymlfile)
+[24/Jan/2020 06:38:59] "GET /Connectors/ HTTP/1.1" 200 5694
+[24/Jan/2020 06:39:11] "POST /Connectors/reports/ HTTP/1.1" 200 4215
+[24/Jan/2020 06:39:13] "GET /Connectors// HTTP/1.1" 200 7258
+[24/Jan/2020 09:31:06] "GET /Connectors/ HTTP/1.1" 200 5694
+Not Found: /favicon.ico
+[24/Jan/2020 09:31:07] "GET /favicon.ico HTTP/1.1" 404 2304
+[24/Jan/2020 09:35:08] "GET /Connectors/ HTTP/1.1" 200 5694
+[24/Jan/2020 09:35:19] "POST /Connectors/reports/ HTTP/1.1" 200 4215
+[24/Jan/2020 09:35:23] "GET /Connectors// HTTP/1.1" 200 7259
+/home/cresta/Hilton/ADVAR/LifeSys/migrations/__init__.py changed, reloading.
+Performing system checks...
+
+/home/cresta/Hilton/ADVAR
+/home/cresta/Hilton/ADVAR
+System check identified no issues (0 silenced).
+January 24, 2020 - 06:38:38
+Django version 2.2.8, using settings 'ADVAR.settings'
+Starting development server at http://10.235.21.27:4545/
+Quit the server with CONTROL-C.
+Testcases || Description                          	              || Status
+==============================================================================
+0
+1
+2
+3
+4
+5
+6
+7
+TestCase1 || XML notice count should match notices present in the pdf || Pass
+------------------------------------------------------------------------------
+TestCase2 || PDF should have correct page count and sheet count       || Pass
+------------------------------------------------------------------------------
+TestCase3 || XML element reportField1 should contain correct doc type || Pass
+------------------------------------------------------------------------------
+TestCase4 || XML element reportField2 should contain correct language || Pass
+------------------------------------------------------------------------------
+Testcases || Description                          	              || Status
+==============================================================================
+0
+1
+2
+3
+4
+5
+6
+7
+TestCase1 || XML notice count should match notices present in the pdf || Pass
+------------------------------------------------------------------------------
+TestCase2 || PDF should have correct page count and sheet count       || Pass
+------------------------------------------------------------------------------
+TestCase3 || XML element reportField1 should contain correct doc type || Pass
+------------------------------------------------------------------------------
+TestCase4 || XML element reportField2 should contain correct language || Pass
+------------------------------------------------------------------------------
+Watching for file changes with StatReloader
+/home/cresta/Hilton/ADVAR/Connectors/Scripts/Testcases.py:18: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  cfg = yaml.load(ymlfile)
+/home/cresta/Hilton/ADVAR/Connectors/views.py:17: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  cfg = yaml.load(ymlfile)
+[24/Jan/2020 12:08:03] "GET /LifeSys HTTP/1.1" 301 0
+[24/Jan/2020 12:08:03] "GET /LifeSys/ HTTP/1.1" 200 17217
+[24/Jan/2020 12:08:05] "GET /static/images/logo-lifesys.png HTTP/1.1" 200 19986
+[24/Jan/2020 12:08:23] "POST /LifeSys/reports/ HTTP/1.1" 200 207
+[24/Jan/2020 12:08:26] "GET /LifeSys/reports/download/ HTTP/1.1" 200 2628
+Not Found: /
+[27/Jan/2020 04:39:13] "GET / HTTP/1.1" 404 2253
+Not Found: /favicon.ico
+[27/Jan/2020 04:39:14] "GET /favicon.ico HTTP/1.1" 404 2304
+[27/Jan/2020 04:39:19] "GET /Connectors/ HTTP/1.1" 200 5694
+[27/Jan/2020 04:39:20] "GET /static/images/connector.jpeg HTTP/1.1" 304 0
+[27/Jan/2020 04:39:30] "GET /Hilton/ HTTP/1.1" 200 7064
+[27/Jan/2020 04:39:38] "GET /LifeSys/ HTTP/1.1" 200 17217
+[27/Jan/2020 04:39:38] "GET /static/images/logo-lifesys.png HTTP/1.1" 304 0
+[27/Jan/2020 04:39:41] "POST /LifeSys/reports/ HTTP/1.1" 200 207
+[27/Jan/2020 04:39:43] "GET /LifeSys/reports/download/ HTTP/1.1" 200 2628

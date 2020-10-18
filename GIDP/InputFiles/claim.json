@@ -1,0 +1,440 @@
+{
+	"info": {
+		"_postman_id": "190ceebd-a02a-45a5-97be-96b325fa7311",
+		"name": "Claims",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://gxdp-runtime-prc-api-dev.us-e2.cloudhub.io/api/SubmitClaim",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "client_id",
+						"value": "16430455-59ec-41b1-a8ed-c77e0b003fe7",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "4e95c262-2d1d-4198-aecc-4969143b9d7d",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"gXdpApi\": {\n        \"correlationID\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n        \"parentCorrelationID\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n        \"transactionType\": {\n            \"sourceNameSpace\": \"LIFESYS\",\n            \"eventName\": \"SUBMITCLAIM\",\n            \"targetNameSpace\": \"GIDP\",\n            \"operation\": \"POST\"\n        },\n        \"gIdpPayLoad\": {\n            \"claim\": {\n                \"contractId\": \"ABCDEFGHIJKLMNOPQRSTUVW\",\n                \"memberId\": \"ABCDEFGH\",\n                \"product\": {\n                    \"type\": \"CANCER\",\n                    \"line\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n                    \"category\": \"ABCDEFGHIJKLM\"\n                },\n                \"submission\": {\n                    \"signatureFlag\": false,\n                    \"signatureDate\": \"1999-01-30\",\n                    \"channel\": \"ABCDEFGHI\",\n                    \"submitterId\": \"ABCDEFGHIJKLMNOPQRS\",\n                    \"submitterName\": \"ABCDEFGHIJKLM\",\n                    \"relationShipPrimaryInsured\": \"ABCDEFGHIJKLMNOPQRSTU\",\n                    \"detail\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZA\"\n                },\n                \"incidents\": [\n                    {\n                        \n                        \"type\": \"CRITICAL-ILLNESS\",\n                        \"subtype\": \"ABCDEFGHIJKLMNOPQRST\",\n                        \"date\": \"1999-01-30\",\n                        \"city\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n                        \"state\": \"ABCDEFGHIJKLMNOPQRSTU\",\n                        \"countryIsoCode\": \"ABCDEFGHIJKL\",\n                        \"locationDetail\": \"ABCDEFGHIJKL\",\n                        \"description\": \"ABCDEFGHIJK\",\n                        \"motorVehicleFlag\": false,\n                        \"policeReportFlag\": true,\n                        \"onTheJobFlag\": true,\n                        \"groundAmbulanceUseDate\": \"1999-01-30\",\n                        \"airAmbulanceUseDate\": \"1999-01-30\",\n                        \"lodgingBenefitCheckInDate\": \"1999-01-30\",\n                        \"lodgingBenefitCheckOutDate\": \"1999-01-30\",\n                        \"providers\": [\n                            {\n                                \"type\": \"PHYSICIAN\",\n                      \t\t\t\"firstName\" : \"Joe\",\n                                \"lastName\" : \"Hopkins\"\n                            }\n                        ],\n                        \"dateofDeath\": \"1999-01-30\",\n                        \"causeofDeath\": \"ABCDEFGHIJKLMNOPQRSTUVW\",\n                        \"dateofFirstSymptomsRelatedtoDeath\": \"ABCDEFGHIJKLMNOPQRSTU\",\n                        \"conditionRecurrenceFlag\": false,\n                        \"firstConsultationDateforCondition\": \"ABCDEFGHIJKLMNOPQR\",\n                        \"diagnosisDate\": \"ABCDEFGHIJ\",\n                        \"reasonforHospitalization\": \"ABCDE\"\n                    }\n                ],\n                \"parties\": [\n                    {\n                        \"person\": {\n                            \"type\": \"PRIMARYINSURED\",\n                            \"firstName\": \"ABCDEFGHIJ\",\n                            \"lastName\": \"ABCDEFGHIJKLMNOPQRS\",\n                            \"middleName\": \"ABCDEFGHIJKLMNOPQRSTU\",\n                            \"dateofBirth\": \"1946-05-30\",\n                            \"taxId\": \"ABCDEFGHIJKLMNOPQ\",\n                            \"address\": {\n                                \"type\": \"PRIMARY\",\n                                \"addressLine1\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n                                \"addressLine2\": \"ABCDEFGHIJK\",\n                                \"city\": \"ABCDEFGHIJKLMNOPQRSTUVW\",\n                                \"state\": \"ABCDEFGHIJ\",\n                                \"postalCode\": \"ABCDEFGHIJKLMNOPQRS\",\n                                \"countryIsoCode\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\"\n                            },\n                            \"phone\": {\n                                \"type\": \"PRIMARY\",\n                                \"phoneNumber\": \"ABCDEFGH\"\n                            },\n                            \"email\": {\n                                \"address\": \"ABCDEFGHIJKLM\",\n                                \"type\": \"PRIMARY\"\n                            },\n                            \"sex\": \"ABCDEFGHIJKLMN\",\n                            \"relationshipToInsured\": \"CHILD\",\n                            \"nameTitle\": \"ABCDEFGHIJKLMNOPQRSTUVWX\"\n                        },\n                        \"type\": \"PERSON\"\n                    },\n                    {\n                        \"organinzation\": {\n                            \"type\": \"PRIMARYINSURED\",\n                            \"name\": \"My Organization\"\n                        },\n                        \"type\": \"ORGANIZATION\"\n                    }\n                ] \n            },\n            \"addOnProperties\": {\n                \"LIFESYS\": {\n                    \"claim\": {\"companyid\": \"some comapney id\"}\n                }\n            }\n        },\n        \"addOnProperties\": {}\n    }\n}"
+				},
+				"url": {
+					"raw": "http://gxdp-runtime-prc-api-dev.us-e2.cloudhub.io/api/v1/SubmitClaim",
+					"protocol": "http",
+					"host": [
+						"gxdp-runtime-prc-api-dev",
+						"us-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"v1",
+						"SubmitClaim"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://gxdp-runtime-prc-api-dev.us-e2.cloudhub.io/api/SubmitClaim Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "client_id",
+						"value": "16430455-59ec-41b1-a8ed-c77e0b003fe7",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "4e95c262-2d1d-4198-aecc-4969143b9d7d",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"gXdpApi\": {\n        \"correlationID\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n        \"parentCorrelationID\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n        \"transactionType\": {\n            \"sourceNameSpace\": \"LIFESYS\",\n            \"eventName\": \"SUBMITCLAIM\",\n            \"targetNameSpace\": \"GIDP\",\n            \"operation\": \"POST\"\n        },\n        \"gIdpPayLoad\": {\n            \"claim\": {\n                \"contractId\": \"ABCDEFGHIJKLMNOPQRSTUVW\",\n                \"memberId\": \"ABCDEFGH\",\n                \"product\": {\n                    \"type\": \"CANCER\",\n                    \"line\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n                    \"category\": \"ABCDEFGHIJKLM\"\n                },\n                \"submission\": {\n                    \"signatureFlag\": false,\n                    \"signatureDate\": \"1999-01-30\",\n                    \"channel\": \"ABCDEFGHI\",\n                    \"submitterId\": \"ABCDEFGHIJKLMNOPQRS\",\n                    \"submitterName\": \"ABCDEFGHIJKLM\",\n                    \"relationShipPrimaryInsured\": \"ABCDEFGHIJKLMNOPQRSTU\",\n                    \"detail\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZA\"\n                },\n                \"incidents\": [\n                    {\n                        \n                        \"type\": \"CRITICAL-ILLNESS\",\n                        \"subtype\": \"ABCDEFGHIJKLMNOPQRST\",\n                        \"date\": \"1999-01-30\",\n                        \"city\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n                        \"state\": \"ABCDEFGHIJKLMNOPQRSTU\",\n                        \"countryIsoCode\": \"ABCDEFGHIJKL\",\n                        \"locationDetail\": \"ABCDEFGHIJKL\",\n                        \"description\": \"ABCDEFGHIJK\",\n                        \"motorVehicleFlag\": false,\n                        \"policeReportFlag\": true,\n                        \"onTheJobFlag\": true,\n                        \"groundAmbulanceUseDate\": \"1999-01-30\",\n                        \"airAmbulanceUseDate\": \"1999-01-30\",\n                        \"lodgingBenefitCheckInDate\": \"1999-01-30\",\n                        \"lodgingBenefitCheckOutDate\": \"1999-01-30\",\n                        \"providers\": [\n                            {\n                                \"type\": \"PHYSICIAN\",\n                      \t\t\t\"firstName\" : \"Joe\",\n                                \"lastName\" : \"Hopkins\"\n                            }\n                        ],\n                        \"dateofDeath\": \"1999-01-30\",\n                        \"causeofDeath\": \"ABCDEFGHIJKLMNOPQRSTUVW\",\n                        \"dateofFirstSymptomsRelatedtoDeath\": \"ABCDEFGHIJKLMNOPQRSTU\",\n                        \"conditionRecurrenceFlag\": false,\n                        \"firstConsultationDateforCondition\": \"ABCDEFGHIJKLMNOPQR\",\n                        \"diagnosisDate\": \"ABCDEFGHIJ\",\n                        \"reasonforHospitalization\": \"ABCDE\"\n                    }\n                ],\n                \"parties\": [\n                    {\n                        \"person\": {\n                            \"type\": \"PRIMARYINSURED\",\n                            \"firstName\": \"ABCDEFGHIJ\",\n                            \"lastName\": \"ABCDEFGHIJKLMNOPQRS\",\n                            \"middleName\": \"ABCDEFGHIJKLMNOPQRSTU\",\n                            \"dateofBirth\": \"1946-05-30\",\n                            \"taxId\": \"ABCDEFGHIJKLMNOPQ\",\n                            \"address\": {\n                                \"type\": \"PRIMARY\",\n                                \"addressLine1\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n                                \"addressLine2\": \"ABCDEFGHIJK\",\n                                \"city\": \"ABCDEFGHIJKLMNOPQRSTUVW\",\n                                \"state\": \"ABCDEFGHIJ\",\n                                \"postalCode\": \"ABCDEFGHIJKLMNOPQRS\",\n                                \"countryIsoCode\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\"\n                            },\n                            \"phone\": {\n                                \"type\": \"PRIMARY\",\n                                \"phoneNumber\": \"ABCDEFGH\"\n                            },\n                            \"email\": {\n                                \"address\": \"ABCDEFGHIJKLM\",\n                                \"type\": \"PRIMARY\"\n                            },\n                            \"sex\": \"ABCDEFGHIJKLMN\",\n                            \"relationshipToInsured\": \"CHILD\",\n                            \"nameTitle\": \"ABCDEFGHIJKLMNOPQRSTUVWX\"\n                        },\n                        \"type\": \"PERSON\"\n                    },\n                    {\n                        \"organinzation\": {\n                            \"type\": \"PRIMARYINSURED\",\n                            \"name\": \"My Organization\"\n                        },\n                        \"type\": \"ORGANIZATION\"\n                    }\n                ] \n            },\n            \"addOnProperties\": {\n                \"LIFESYS\": {\n                    \"claim\": {\"companyid\": \"some comapney id\"}\n                }\n            }\n        },\n        \"addOnProperties\": {}\n    }\n}"
+				},
+				"url": {
+					"raw": "http://gxdp-runtime-prc-api-dev.us-e2.cloudhub.io/api/v1/SubmitClaim",
+					"protocol": "http",
+					"host": [
+						"gxdp-runtime-prc-api-dev",
+						"us-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"v1",
+						"SubmitClaim"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://gxdp-runtime-prc-api-dev.us-e2.cloudhub.io/api/GetClaim",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "client_id",
+						"value": "x",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "x",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"gXdpApi\": {\n        \"correlationID\": \"kevsdfsdfsgggggggggggggggggggggfffffee\",\n        \"parentCorrelationID\": \"ABCDEFGHIJKLMNOPQRS\",\n        \"transactionType\": {\n            \"sourceNameSpace\": \"GxDP\",\n            \"eventName\": \"GetClaim\",\n            \"targetNameSpace\": \"GiDP\",\n            \"operation\": \"GET\"\n        },\n        \"gIdpPayLoad\": {\n            \"claim\": {\n              \n                \"document\": {\n                    \"typeOfDocument\": \"Claim Document\",\n                    \"typeOfContent\": \"pdf\",\n                    \"name\": \"ClaimNumber12345\",\n                    \"description\": \"this is a claim submission\",\n                    \"contentStream\": {\n                        \"type\": \"inline\",\n                        \"body\": \"YmFzZTY0ZWNub2RlZF9kYXRhX2NvbnRlbnRfaGVyZQ==\"\n                    }\n                  \n                },\n                \"contractId\": \"ABCDEFGHIJKLMNOPQRSTUV\",\n                \"personId\": \"ABCDE\",\n                \"claimId\": \"ABCDEFGHIJKLMNOPQRSTU\",\n                \"parties\": [\n                    {\n                        \"entityType\": \"Person\",\n                        \"person\" : {\n                            \"personType\": \"PrimaryInsured\",\n                            \"firstName\": \"ABCDEFGH\",\n                            \"middleName\": \"ABCDEFGHIJKLM\",\n                            \"lastName\": \"ABCDEFGHI\",\n                            \"dob\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZABC\",\n                            \"taxId\": \"ABCDEFG\"\n                        }\n                    },\n                    {\n                        \"entityType\": \"Person\",\n                        \"person\" : {\n                            \"personType\": \"Claimant\",\n                            \"firstName\": \"ABCDEFGH\",\n                            \"middleName\": \"ABCDEFGHIJKLM\",\n                            \"lastName\": \"ABCDEFGHI\",\n                            \"dob\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZABC\",\n                            \"taxId\": \"ABCDEFG\"\n                        }\n                    }\n                ],\n                \"incident\": {\n                    \"incidentType\": \"Accident\",\n                    \"date\": \"ABCDEFGHIJKLMNOP\",\n                    \"city\": \"ABCDEFGHIJKLM\",\n                    \"state\": \"ABCDEFGHIJKLMN\",\n                    \"countryIsoCode\": \"ABCDEFGH\",\n                    \"locationDetail\": \"ABCDEFGHIJKLMNOPQRSTUV\",\n                    \"description\": \"ABCDEFGHIJKLMNO\",\n                    \"motorVehicleFlag\": true,\n                    \"policeReportFlag\": true,\n                    \"onTheJobFlag\": false,\n                    \"groundAmbulanceUseDate\": \"ABCDEF\",\n                    \"airAmbulanceUseDate\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n                    \"lodgingBenefitCheckInDate\": \"ABCD\",\n                    \"lodgingBenefitCheckOutDate\": \"ABCDEFGHIJKLMNOPQRSTUVW\"\n                },\n                \"provider\": {\n                    \"providerType\": \"FACILITY\",\n                    \"datesConsulted\": \"ABCDEFG\",\n                    \"admissionDate\": \"ABCDEFGHIJKLMNOPQRSTUV\",\n                    \"dischargeDate\": \"ABCDEFGHIJKLM\",\n                    \"address\": {\n                        \"AddressType\": \"ABCDEFGHIJKLMNOP\",\n                        \"addressLine1\": \"ABCDEFGHIJKLMNOPQRSTUVWX\",\n                        \"addressLine2\": \"ABCDEFGHIJKLMNOP\",\n                        \"city\": \"ABCDEFGHIJK\",\n                        \"state\": \"ABCDEFGHIJKLMNOPQR\",\n                        \"postalCode\": \"ABCDEFG\",\n                        \"countryIsoCode\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZABC\",\n                        \"phoneNumber\": \"ABCDEFGHIJKLMNOPQ\",\n                        \"email\": \"ABCDEFGHIJKLMNOPQR\"\n                    },\n                    \"faciltiyName\": \"ABCDEFGHIJK\"\n                  \n                },\n                \"paymentInfo\": {\n                    \"specialInstructions\": \"ABCDEFGHIJKLMNOP\",\n                    \"method\": \"EFT\",\n                    \"bankName\": \"ABCDEFGHIJKLMNOPQRSTU\",\n                    \"bankPhoneNumber\": \"ABCDEFGHIJKLMNOPQRST\",\n                    \"bankInfo\": {\n                        \"routingNumber\": \"ABCDEFGHI\",\n                        \"accountNumber\": \"ABCDEFGHIJKLMNOPQ\",\n                        \"accountType\": \"Savings\"\n                    }\n                },\n                \"submission\": {\n                    \"signatureFlag\": true,\n                    \"signatureDate\": \"ABCDEFGHIJKLM\",\n                    \"channel\": \"ABCDEFGH\",\n                    \"submitterId\": \"ABCDEFGH\",\n                    \"submitterName\": \"ABCDEFGHI\",\n                    \"relationShipPrimaryInsured\": \"ABCDEFGHIJKLMNO\",\n                    \"detail\": \"ABCDEFGHIJKLMNOPQRST\"\n                }\n            }\n        },\n        \"addOnProperties\": {}\n    }\n}"
+				},
+				"url": {
+					"raw": "http://gxdp-runtime-prc-api-dev.us-e2.cloudhub.io/api/v1/GetClaim",
+					"protocol": "http",
+					"host": [
+						"gxdp-runtime-prc-api-dev",
+						"us-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"v1",
+						"GetClaim"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://gxdp-runtime-prc-api-dev.us-e2.cloudhub.io/api/CreateClaim",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "client_id",
+						"value": "x",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "x",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"gXdpApi\": {\n        \"correlationID\": \"ABCDEFGHIJKLM\",\n        \"transactionType\": {\n            \"sourceNameSpace\": \"LIFESYS\",\n            \"targetNameSpace\": \"GIDP\",\n            \"operation\": \"POST\",\n            \"eventName\": \"CreateClaim\"\n        },\n        \"gIdpPayLoad\": {\n            \"claim\": {\n                \"memberId\": \"ABCDEFGHIJKLMNOPQR\",\n                \"incidents\": [\n                    {\n                        \"type\": \"ABCDEFGHIJKL\",\n                        \"subtype\": \"ABCDEFGHIJKLMNOPQRST\",\n                        \"icdCode\": \"ABCDEFGHIJKLMN\",\n                        \"date\": \"1999-01-31\",\n                        \"city\": \"ABCDEF\",\n                        \"state\": \"ABCDEFGHIJKLMNOP\",\n                        \"countryIsoCode\": \"ABCDEF\",\n                        \"locationDetail\": \"ABCDEFGHIJKLMNOPQRSTUV\",\n                        \"description\": \"ABCDEFGHIJKLMNOPQRSTUVWX\",\n                        \"motorVehicleFlag\": true,\n                        \"policeReportFlag\": true,\n                        \"onTheJobFlag\": true,\n                        \"groundAmbulanceUseDate\": \"1999-01-31\",\n                        \"airAmbulanceUseDate\": \"1999-01-31\",\n                        \"lodgingBenefitCheckInDate\": \"1999-01-31\",\n                        \"lodgingBenefitCheckOutDate\": \"1999-01-31\",\n                        \"providers\": [],\n                        \"dateofDeath\": \"1999-01-31\",\n                        \"causeofDeath\": \"ABCDEFGHIJKLMNOPQRSTUVWX\",\n                        \"dateofFirstSymptomsRelatedtoDeath\": \"1999-01-31\",\n                        \"conditionRecurrenceFlag\": true,\n                        \"firstConsultationDateforCondition\": \"1999-01-31\",\n                        \"diagnosisDate\": \"1999-01-31\",\n                        \"reasonforHospitalization\": \"ABCDEFGHI\",\n                        \"totalBilled\": 28.75\n                    }\n                ],\n                \"parties\": [\n                    {\n                        \"organinzation\": {\n                            \"type\": \"ORGANIZATION\",\n                            \"name\": \"ABCDEFGHIJKLMNO\"\n                        },\n                        \"type\": \"ORGANIZATION\"\n                    },\n                    {\n                        \"person\": {\n                            \"type\": \"PRIMARYINSURED\",\n                            \"firstName\": \"ABCDEFGHIJK\",\n                            \"lastName\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZABC\",\n                            \"middleName\": \"ABCDE\",\n                            \"dateofBirth\": \"1999-01-30\",\n                            \"taxId\": \"ABCDEFG\",\n                            \"address\": {\n                                \"type\": \"PRIMARY\",\n                                \"addressLine1\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n                                \"addressLine2\": \"ABCDEFG\",\n                                \"city\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n                                \"state\": \"ABCDEFGHIJ\",\n                                \"postalCode\": \"ABCDEFGH\",\n                                \"countryIsoCode\": \"ABCDEFGHIJKLMNOPQRSTUVWXY\"\n                            },\n                            \"phone\": {\n                                \"type\": \"PRIMARY\",\n                                \"phoneNumber\": \"ABCDEFGHIJKLMNOPQRSTUVWXY\"\n                            },\n                            \"email\": {\n                                \"address\": \"ABCDEFGHIJKLMNOPQRSTUVWX\",\n                                \"type\": \"PRIMARY\"\n                            },\n                            \"sex\": \"ABCDEFGH\",\n                            \"relationshipToInsured\": \"PARENT\",\n                            \"nameTitle\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n                            \"employerName\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZABC\"\n                        },\n                        \"type\": \"PERSON\"\n                    }\n                ],\n                \"contractId\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZAB\",\n                \"claimId\": \"ABCDEFGHIJKLMNOPQRSTUVWXY\",\n                \"product\": {\n                    \"type\": \"ACCIDENT\",\n                    \"line\": \"ABCDEFGHIJKLMNOPQRSTUVWX\",\n                    \"category\": \"ABCDEFGHI\",\n                    \"code\": \"ABCDEFGHIJKLMNOPQRST\"\n                },\n                \"submission\": {\n                    \"signatureFlag\": false,\n                    \"signatureDate\": \"1999-01-31\",\n                    \"channel\": \"ABCDEFGHIJKLMN\",\n                    \"submitterId\": \"ABCDEFGH\",\n                    \"submitterName\": \"ABCDEFGHIJKLM\",\n                    \"relationShipPrimaryInsured\": \"ABCD\",\n                    \"detail\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\"\n                },\n                \"documents\": []\n            },\n            \"addOnProperties\": {\n                \"LIFESYS\": {\n                    \"policyHolder\": {\n                        \"companyid\": \"some comapney id\"\n                    }\n                }\n            }\n        },\n        \"parentCorrelationID\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n        \"addOnProperties\": {}\n    }\n}"
+				},
+				"url": {
+					"raw": "http://gxdp-runtime-prc-api-dev.us-e2.cloudhub.io/api/v1/CreateClaim",
+					"protocol": "http",
+					"host": [
+						"gxdp-runtime-prc-api-dev",
+						"us-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"v1",
+						"CreateClaim"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://gxdp-runtime-prc-api-dev.us-e2.cloudhub.io/api/SubmitClaimDocumeent",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "client_id",
+						"value": "x",
+						"type": "text"
+					},
+					{
+						"key": "client_secret",
+						"value": "x",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"gXdpApi\": {\n    \"correlationID\": \"ABCDEFGHIJ\",\n    \"transactionType\": {\n      \t\"sourceNameSpace\": \"LIFESYS\",\n         \"eventName\": \"SUBMITCLAIMANDDOCUMENT\",\n         \"targetNameSpace\": \"GIDP\",\n         \"operation\": \"POST\"\n    },\n    \"gIdpPayLoad\": {\n      \"claim\": {\n        \"incidents\": [\n          {\n            \"type\": \"ACCIDENT\",\n            \"subtype\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZABC\",\n            \"icdCode\": \"ABCDEFGHIJKLMN\",\n            \"date\": \"ABCDEFGHIJKLMNOPQRSTUV\",\n            \"city\": \"ABCDEFGHIJ\",\n            \"state\": \"ABCDEFGHIJKLMNOPQRSTUV\",\n            \"countryIsoCode\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZA\",\n            \"locationDetail\": \"ABCDEFGHIJKLMN\",\n            \"description\": \"ABCDEFGHIJKLMN\",\n            \"motorVehicleFlag\": false,\n            \"policeReportFlag\": false,\n            \"onTheJobFlag\": true,\n            \"groundAmbulanceUseDate\": \"ABCDEFGHIJKLMNOPQRSTUV\",\n            \"airAmbulanceUseDate\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZA\",\n            \"lodgingBenefitCheckInDate\": \"ABCDEFGH\",\n            \"lodgingBenefitCheckOutDate\": \"ABCDEFGHI\",\n            \"providers\": [],\n            \"dateofDeath\": \"ABCDEFGHIJKLMNOPQRSTUVWX\",\n            \"causeofDeath\": \"ABCDEFGHIJKLMNOPQRSTUVW\",\n            \"dateofFirstSymptomsRelatedtoDeath\": \"ABCDEFGHI\",\n            \"conditionRecurrenceFlag\": true,\n            \"firstConsultationDateforCondition\": \"ABCDEFGHIJKLMNOPQRS\",\n            \"diagnosisDate\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZABC\",\n            \"reasonforHospitalization\": \"ABCDE\"\n          }\n        ],\n        \"parties\": [\n          {\n            \"type\": \"PERSON\",\n            \"person\": {\n            \t\"type\":\"PRIMARYINSURED\",\n            \t\"firstName\":\"Joseph\",\n            \t\"lastName\":\"Hopkins\"\n        \t},\n            \"address\": {\n              \"type\": \"PRIMARY\",\n              \"addressLine1\": \"ABCDEFGHIJKLMNO\",\n              \"addressLine2\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZA\",\n              \"city\": \"ABCDEFGHIJ\",\n              \"state\": \"ABCDEFG\",\n              \"postalCode\": \"ABCDEFGHIJKLMNOPQRSTU\",\n              \"countryIsoCode\": \"ABCDEFGHIJ\"\n            },\n            \"phone\": {\n              \"type\": \"DAYTIME\",\n              \"phoneNumber\": \"ABCDEFGHIJKLMNOPQRSTUVWXY\"\n            },\n            \"email\": {\n              \"address\": \"ABCDEFGHIJKL\",\n              \"type\": \"PRIMARY\"\n            },\n            \"relationshipToInsured\": \"CHILD\",\n            \"taxId\": \"ABCDEFGHIJKLMNO\"\n          }\n        ],\n        \"documents\": [\n          {\n            \"documentId\": \"ABCDEFGHIJKLMNOPQRS\",\n            \"creationDate\": \"ABCDEFGHIJKLMNOPQRSTUV\",\n            \"name\": \"ABCDEFGHIJKLMNOP\",\n            \"description\": \"ABCDEFG\",\n            \"pageCount\": 859,\n            \"typeOfDocument\": \"ABCDEFGHIJKLMNOPQRSTUVWXY\",\n            \"typeOfContent\": \"ABCDEFGHIJKLMNOP\",\n            \"contentStream\": {\n              \"type\": \"URL\",\n              \"url\":\"http://mydomain/mypath/myfile.dat\"\n            }\n          }\n        ],\n        \"contractId\": \"ABCD\",\n        \"memberId\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZAB\",\n        \"claimId\": \"ABCDEFGHIJKLMNOPQR\",\n        \"submission\": {\n          \"channel\": \"ABCDEFGHIJKLMNOPQRST\",\n          \"submitterId\": \"ABCDEFGHIJKLMNOPQRSTUVWX\",\n          \"submitterName\": \"ABCDEFGHIJKLMNOPQRS\",\n          \"relationShipPrimaryInsured\": \"ABCDEFGHIJKLMNOPQR\",\n          \"detail\": \"ABCDEFGHIJKLMN\",\n          \"signatureFlag\": true,\n          \"signatureDate\": \"ABCDEFGHIJ\"\n        },\n        \"product\": {\n          \"type\": \"HEALTH-SCREENING\",\n          \"line\": \"ABCDEFGHIJKLMNOPQRSTUV\",\n          \"category\": \"ABCDEFGHIJKLM\",\n          \"code\": \"ABCDEFGHIJKLMNOPQRSTUV\"\n        }\n      },\n      \"addOnProperties\": {}\n    },\n    \"parentCorrelationID\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZABC\",\n    \"addOnProperties\": {}\n  }\n}"
+				},
+				"url": {
+					"raw": "http://gxdp-runtime-prc-api-dev.us-e2.cloudhub.io/api/v1/SubmitClaimDocument",
+					"protocol": "http",
+					"host": [
+						"gxdp-runtime-prc-api-dev",
+						"us-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"v1",
+						"SubmitClaimDocument"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://gxdp-runtime-prc-api-dev.us-e2.cloudhub.io/api/SendClaim",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "client_id",
+						"type": "text",
+						"value": "x"
+					},
+					{
+						"key": "client_secret",
+						"type": "text",
+						"value": "x"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"gXdpApi\": {\n        \"correlationID\": \"ABCDEFGHIJKLMNOPQRST\",\n        \"transactionType\": {\n            \"sourceNameSpace\": \"LIFESYS\",\n            \"targetNameSpace\": \"GIDP\",\n            \"operation\": \"POST\",\n            \"eventName\": \"SENDCLAIM\"\n        },\n        \"gIdpPayLoad\": {\n            \"claim\": {\n                \"memberId\": \"ABCDEFGHIJKLMNOPQRSTUVWX\",\n                \"incidents\": [\n                    {\n                        \"type\": \"ACCIDENT\",\n                        \"subtype\": \"ABCDEFGHIJK\",\n                        \"icdCode\": \"ABCDE\",\n                        \"date\": \"1999-02-30\",\n                        \"city\": \"ABCDEFGHIJKLMNO\",\n                        \"state\": \"ABCDEF\",\n                        \"countryIsoCode\": \"ABCDEFGHIJKLMNOPQRS\",\n                        \"locationDetail\": \"ABCDEF\",\n                        \"description\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZABC\",\n                        \"motorVehicleFlag\": false,\n                        \"policeReportFlag\": true,\n                        \"onTheJobFlag\": true,\n                        \"groundAmbulanceUseDate\": \"1999-02-30\",\n                        \"airAmbulanceUseDate\": \"1999-02-30\",\n                        \"lodgingBenefitCheckInDate\": \"1999-02-30\",\n                        \"lodgingBenefitCheckOutDate\": \"1999-02-30\",\n                        \"providers\": [],\n                        \"dateofDeath\": \"1999-02-30\",\n                        \"causeofDeath\": \"ABCDEFGHIJKLMNOPQ\",\n                        \"dateofFirstSymptomsRelatedtoDeath\": \"1999-02-30\",\n                        \"conditionRecurrenceFlag\": true,\n                        \"firstConsultationDateforCondition\": \"1999-02-30\",\n                        \"diagnosisDate\": \"1999-02-30\",\n                        \"reasonforHospitalization\": \"ABCDEFGHIJKLMNOPQRSTUVWXY\",\n                        \"totalBilled\": 365.5\n                    }\n                ],\n                \"parties\": [\n                    {\n                        \"organinzation\": {\n                            \"type\": \"PRIMARYINSURED\",\n                            \"name\": \"ABCDEFGHIJKLMNO\"\n                        },\n                        \"type\": \"ORGANIZATION\"\n                    },\n                    {\n                        \"person\": {\n                            \"type\": \"PRIMARYINSURED\",\n                            \"firstName\": \"ABCDEFGHIJK\",\n                            \"lastName\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZABC\",\n                            \"middleName\": \"ABCDE\",\n                            \"dateofBirth\": \"1999-01-30\",\n                            \"taxId\": \"ABCDEFG\",\n                            \"address\": {\n                                \"type\": \"PRIMARY\",\n                                \"addressLine1\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n                                \"addressLine2\": \"ABCDEFG\",\n                                \"city\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n                                \"state\": \"ABCDEFGHIJ\",\n                                \"postalCode\": \"ABCDEFGH\",\n                                \"countryIsoCode\": \"ABCDEFGHIJKLMNOPQRSTUVWXY\"\n                            },\n                            \"phone\": {\n                                \"type\": \"PRIMARY\",\n                                \"phoneNumber\": \"ABCDEFGHIJKLMNOPQRSTUVWXY\"\n                            },\n                            \"email\": {\n                                \"address\": \"ABCDEFGHIJKLMNOPQRSTUVWX\",\n                                \"type\": \"PRIMARY\"\n                            },\n                            \"sex\": \"ABCDEFGH\",\n                            \"relationshipToInsured\": \"PARENT\",\n                            \"nameTitle\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n                            \"employerName\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZABC\"\n                        },\n                        \"type\": \"PERSON\"\n                    }\n                ],\n                \"contractId\": \"ABCDEFGHIJKLM\",\n                \"recurringPayment\": {\n                    \"startDate\": \"1999-02-30\",\n                    \"endDate\": \"1999-02-30\",\n                    \"mode\": \"ABCDEFGHIJKLMNOPQRS\",\n                    \"paidThruDate\": \"1999-02-30\"\n                },\n                \"paymentMethod\": {\n                    \"method\": {\n                        \"bank\": {\n                            \"routingNumber\": \"ABCDEFGH\",\n                            \"accountNumber\": \"ABCDEFGHIJKLM\",\n                            \"accountType\": \"Checking\",\n                            \"name\": \"ABCDEFGHIJKLMNOPQRST\",\n                            \"phoneNumber\": \"ABCDEFGHIJ\"\n                        },\n                        \"address\": {\n                            \"addressLine1\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZA\",\n                            \"city\": \"ABCDEF\",\n                            \"state\": \"ABCDEFGHIJKLMNOPQRST\",\n                            \"postalCode\": \"ABCD\",\n                            \"type\": \"PRIMARY\",\n                            \"addressLine2\": \"ABCDEFGHIJKL\",\n                            \"countryIsoCode\": \"ABCDEFGH\"\n                        }\n                    },\n                    \"specialInstructions\": \"ABCDEFGHIJKLMNOPQRSTUVWX\",\n                    \"preferredMethod\": \"EFT\"\n                },\n                \"claimInfo\": {\n                    \"comment\": \"ABCDEFGHIJKLMNOPQRSTU\",\n                    \"lastDispositionCode\": \"ABCDEFGHIJKLM\",\n                    \"claimStatus\": \"ABCDEFGHIJKLMNOPQRSTUVWXY\",\n                    \"claimStatusDate\": \"1999-02-30\",\n                    \"reportDate\": \"1999-02-30\",\n                    \"examinerOPID\": \"ABCDEFGHI\",\n                    \"restrictedProcessingFlag\": false,\n                    \"lastChangeDate\": \"1999-02-30\",\n                    \"lastChangeOPID\": \"ABCDEFGHIJKLMNOPQRS\",\n                    \"proofReceivedDate\": \"1999-02-30\",\n                    \"claimReserveAmount\": 196.25,\n                    \"taxableFlag\": false,\n                    \"lastPaymentDate\": \"1999-02-30\",\n                    \"paymentCount\": 37.75,\n                    \"paymentTotal\": 282,\n                    \"pendingPaymentCount\": 758.75,\n                    \"pendingPaymentTotal\": 540\n                },\n                \"claimId\": \"ABCDEFGHIJKLMNOPQR\",\n                \"product\": {\n                    \"type\": \"HEALTH-SCREENING\",\n                    \"line\": \"ABCDEFGHIJKLMNOPQRSTUVWXY\",\n                    \"category\": \"ABCDEFGHIJKLMNOPQRST\",\n                    \"code\": \"ABCDEFGHIJKLMNO\"\n                },\n                \"submission\": {\n                    \"signatureFlag\": false,\n                    \"signatureDate\": \"1999-02-30\",\n                    \"channel\": \"ABCDEFGHIJKLMNOPQR\",\n                    \"submitterId\": \"ABCDEFGHIJKLMNOPQRSTU\",\n                    \"submitterName\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n                    \"relationShipPrimaryInsured\": \"ABCDEF\",\n                    \"detail\": \"ABCDEFGHIJKLMNOPQRSTUVWXY\"\n                },\n                \"documents\": []\n            },\n            \"addOnProperties\": {\n                \"LIFESYS\": {\n                    \"policyHolder\": {\n                        \"companyid\": \"2323\"\n                    }\n                }\n            }\n        },\n        \"parentCorrelationID\": \"ABCDEFGHIJKLMNOPQRSTU\",\n        \"addOnProperties\": {}\n    }\n}"
+				},
+				"url": {
+					"raw": "http://gxdp-runtime-prc-api-dev.us-e2.cloudhub.io/api/v1/SendClaim",
+					"protocol": "http",
+					"host": [
+						"gxdp-runtime-prc-api-dev",
+						"us-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"v1",
+						"SendClaim"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://gxdp-runtime-prc-api-dev.us-e2.cloudhub.io/api/SendPayment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "client_id",
+						"type": "text",
+						"value": "x"
+					},
+					{
+						"key": "client_secret",
+						"type": "text",
+						"value": "x"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"gXdpApi\": {\n    \"correlationID\": \"ABCDEFGHIJKL\",\n    \"transactionType\": {\n      \"sourceNameSpace\": \"LIFESYS\",\n      \"targetNameSpace\": \"GIDP\",\n      \"operation\": \"POST\",\n      \"eventName\": \"SENDPAYMENT\"\n    },\n    \"gIdpPayLoad\": {\n      \"claim\": {\n        \"contractId\": \"ABCDEFGHIJK\",\n        \"claimId\": \"ABCDEFG\",\n        \"payment\": {\n          \"paymentId\": \"ABCDEFGHIJKLMNOPQRST\",\n          \"amount\": 290.0,\n          \"method\": \"CHECK\",\n          \"payee\": {\n            \"type\": \"ABCDEFG\",\n            \"relationShip\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZABC\",\n            \"locationId\": \"ABCDEFGHIJKLM\",\n            \"federalId\": \"ABCDEFGHIJKLMNOPQR\",\n            \"name\": \"ABCDEFGH\",\n            \"address\": {\n              \"addressLine1\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZABC\",\n              \"city\": \"ABCDEFGHIJKLMNOPQRST\",\n              \"state\": \"ABCDEFGH\",\n              \"postalCode\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n              \"type\": \"PRIMARY\",\n              \"addressLine2\": \"ABCDEFGHIJKLMNO\",\n              \"countryIsoCode\": \"ABCDEFGHIJKLM\"\n            }\n          },\n          \"name\": \"ABCDE\",\n          \"relationShip\": \"ABCDEF\",\n          \"comment\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZAB\",\n          \"CPTCodes\": \"ABCDEFGHIJKLM\",\n          \"1stPaymentFlag\": true\n        },\n        \"memberId\": \"ABCD\",\n        \"paymentMethod\": {\n          \"method\": {\n            \"bank\": {\n              \"routingNumber\": \"ABCDEFGHI\",\n              \"accountNumber\": \"ABCDEFGHIJKLMNOPQRST\",\n              \"accountType\": \"Checking\",\n              \"name\": \"ABCDEFG\",\n              \"phoneNumber\": \"ABCDEFGHIJKLMNOPQRSTUVWXY\"\n            },\n            \"address\": {\n              \"addressLine1\": \"ABCDEFGHI\",\n              \"city\": \"ABCDEF\",\n              \"state\": \"ABCDEFGHIJKLMNOPQR\",\n              \"postalCode\": \"ABCDEFGH\",\n              \"type\": \"PRIMARY\",\n              \"addressLine2\": \"ABCDEFGH\",\n              \"countryIsoCode\": \"ABCDEFGHIJKLMNO\"\n            }\n          },\n          \"specialInstructions\": \"ABCD\",\n          \"preferredMethod\": \"EFT\"\n        },\n        \"recurringPayment\": {\n          \"startDate\": \"1999-02-30\",\n          \"endDate\": \"1999-02-30\",\n          \"mode\": \"ABCDEFGHIJKLMN\",\n          \"paidThruDate\": \"1999-02-30\"\n        }\n      },\n      \"addOnProperties\": {}\n    },\n    \"parentCorrelationID\": \"ABCDEFGHIJKLMNOPQ\",\n    \"addOnProperties\": {}\n  }\n}"
+				},
+				"url": {
+					"raw": "http://gxdp-runtime-prc-api-dev.us-e2.cloudhub.io/api/v1/SendPayment",
+					"protocol": "http",
+					"host": [
+						"gxdp-runtime-prc-api-dev",
+						"us-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"v1",
+						"SendPayment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://lifesys-notification-prc-api/api/v1/ReceiveNotification",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "client_id",
+						"type": "text",
+						"value": "x"
+					},
+					{
+						"key": "client_secret",
+						"type": "text",
+						"value": "x"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"gXdpApi\": {\n        \"correlationID\": \"ABCDEFGHIJKLMNOPQR\",\n        \"transactionType\": {\n            \"sourceNameSpace\": \"LIFESYS\",\n            \"targetNameSpace\": \"GIDP\",\n            \"operation\": \"POST\",\n            \"eventName\": \"RECEIVENOTIFICATION\"\n        },\n        \"gIdpPayLoad\": {\n        \t\"acknowledgeId\" : \"SendClaim--085537188--\",\n            \"notification\": {\"themessage\": \"ABCDEFGHIJKLMNOPQR\"},\n            \"addOnProperties\": {}\n        },\n        \"parentCorrelationID\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZABC\",\n        \"addOnProperties\": {}\n    }\n}"
+				},
+				"url": {
+					"raw": "http://lifesys-notification-prc-api-dev.us-e2.cloudhub.io/api/v1/ReceiveNotification",
+					"protocol": "http",
+					"host": [
+						"lifesys-notification-prc-api-dev",
+						"us-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"v1",
+						"ReceiveNotification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://lifesys-policy-prc-api/api/v1/SearchPolicy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "client_id",
+						"type": "text",
+						"value": "d3eaad932c3d48a19480576458cec48b"
+					},
+					{
+						"key": "client_secret",
+						"type": "text",
+						"value": "7b5822645B994a8AAbE120BfEc4A06F1"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"gXdpApi\": {\n    \"transactionType\": {\n      \"sourceNameSpace\": \"LIFESYS\",\n      \"eventName\": \"SEARCHPOLICY\",\n      \"targetNameSpace\": \"GIDP\",\n      \"operation\": \"POST\"\n    },\n    \"gIdpPayload\": {\n      \"policyHolder\": {\n        \"contractId\": \"1212121\",\n        \"memberID\": \"4564564654\",\n        \"coverageRequestStartDate\": \"2020-01-01\",\n        \"coverageRequestEndDate\": \"2020-01-01\",\n        \"firstName\": \"ABCDEFGHI\",\n        \"lastName\": \"ABCDEFGHIJKL\",\n        \"dateOfBirth\": \"2020-01-01\",\n        \"groupNumber\": \"ABCDEFGHIJKLM\",\n        \"taxId\": \"ABCDEFGHI\",\n        \"postalCode\": \"ABCDEFGHI\",\n        \"agentId\": \"ABCDEFGHIJKL\",\n        \"insuredSSN\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZABC\",\n        \"phoneNumber\": \"ABCDE\",\n        \"emailAddress\": \"ABCDEFGHIJKLMNOP\"\n      },\n      \"addOnProperties\": {}\n    },\n    \"parentCorrelationID\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n    \"correlationID\": \"ABCDEFGHIJ\",\n    \"addOnProperties\": {}\n  }\n}"
+				},
+				"url": {
+					"raw": "http://lifesys-policy-prc-api-dev.us-e2.cloudhub.io/api/v1/SearchPolicy",
+					"protocol": "http",
+					"host": [
+						"lifesys-policy-prc-api-dev",
+						"us-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"v1",
+						"SearchPolicy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://lifesys-policy-prc-api/api/v1/GetPolicy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "client_id",
+						"type": "text",
+						"value": "d3eaad932c3d48a19480576458cec48b"
+					},
+					{
+						"key": "client_secret",
+						"type": "text",
+						"value": "7b5822645B994a8AAbE120BfEc4A06F1"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"gXdpApi\": {\n    \"transactionType\": {\n      \"sourceNameSpace\": \"LIFESYS\",\n      \"eventName\": \"GETPOLICY\",\n      \"targetNameSpace\": \"GIDP\",\n      \"operation\": \"POST\"\n    },\n    \"gIdpPayload\": {\n      \"policyHolder\": {\n        \"contractId\": \"12345666\",\n        \"memberID\": \"56789666\",\n        \"coverageRequestStartDate\": \"2020-01-01\",\n        \"coverageRequestEndDate\": \"2020-06-01\"\n      },\n      \"addOnProperties\": {}\n    },\n    \"parentCorrelationID\": \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\",\n    \"correlationID\": \"ABCDEFGHIJKL\",\n    \"addOnProperties\": {}\n  }\n}"
+				},
+				"url": {
+					"raw": "http://lifesys-policy-prc-api-dev.us-e2.cloudhub.io/api/v1/GetPolicy",
+					"protocol": "http",
+					"host": [
+						"lifesys-policy-prc-api-dev",
+						"us-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"v1",
+						"GetPolicy"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

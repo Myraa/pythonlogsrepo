@@ -1,0 +1,29 @@
+database: 'AITestEngine'
+user: 'cresta'
+password: 'nttdata@123'
+host: '10.235.21.27'
+
+API:
+  MulesoftAPI: ''
+  CloudhubAPI: ''
+
+tablename:
+  mulesoft: 'mulesoft'
+  cloudhub: 'cloudhub'
+  salesforce: 'salesforce'
+  master: 'reports'
+
+columns:
+  master: ['correlationid', 'eventname','mulesoftTable','AggregateTable','Status']
+  mulesoft: ['correlationid', 'eventname','parentcorrelationid','sourcenamespace','targetnamespace','successcriteria','failedresponse']
+  cloudhub: ['correlationid', 'eventname','parentcorrelationid','sourcenamespace','targetnamespace']
+  salesforce: ['correlationid', 'eventname','parentcorrelationid','sourcenamespace','targetnamespace','successcriteria','failedresponse']
+
+ValidationAttributes:
+  Aggregate: ['correlationID','eventName','parentCorrelationID','sourceNameSpace','targetNameSpace']
+  Request: []
+  Response: ['compositeResponse','gIdpPayLoad','success','errorMessage','error','errorObject','message']
+OtherAttributes:
+  Aggregate: []
+  Request: []
+  Response: []

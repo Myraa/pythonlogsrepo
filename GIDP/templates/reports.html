@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>File Validator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="{$ static 'vendor1/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'vendor1/fontawesome.css' %}">
+    <!-- Latest compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
+    <!-- Optional theme -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+
+    <!-- Latest compiled and minified JavaScript -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="{% static './style.css' %}">
+
+    <style>
+    .sub-footer {
+    margin-top: 281px !important;
+    }
+
+
+
+
+.btn:hover {
+  background-color: RoyalBlue;
+}
+
+h3{
+padding-top:36px;
+ border-style: solid;
+   width: 26%;
+   border-radius: 24px;
+   border-bottom-width: 5px;
+   height: 86px;
+
+}
+
+#button1 , #button2 ,#button3{
+display:inline-block;
+margin-left: 136px;
+border-radius: 13px;
+
+}
+#button2 {
+margin-left: 256px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+}
+
+li {
+  float: left;
+  border-right:0px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+}
+
+li a:hover:not(.active) {
+
+}
+
+.active {
+
+}
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="sub-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-xs-12">
+                <ul class="left-info">
+                    <li><a href="#"><h2 style="color:Black">&nbsp;GIDP Reports</h2></a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <ul class="right-icons">
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<header class="">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+
+            <a href="/ADVAR/main/templates/OtherUsecase/"><h2 style="color:Black; float:right;">&nbsp;<u>Home</u></h2>
+            </a>
+            </ul>
+        </div>
+        </div>
+    </nav>
+</header>
+</div>
+<!-- partial:index.partial.html -->
+
+<div style="">
+    <ul style="margin-top: 15px; ">
+        <li class="active">
+            <button class="btn btn-primary"><a data-toggle="tab" style="color:white" href="/GIDP/Reports">Reports</a>
+            </button>
+        </li>
+        <li>
+            <button class="btn btn-primary"><a data-toggle="tab" style="color:white" onclick="showDiff1()">Filter</a>
+            </button>
+        </li>
+        <li style=" float:right;">
+            <button class="btn btn-primary"><a style="color:white" data-toggle="tab" href="download/"> Download</a>
+            </button>
+        </li>
+
+    </ul>
+</div>
+<div style="display:inline-flex;">
+    <h4>Last Updated:</h4> &nbsp;&nbsp;2020-7-16 18:30:53
+</div>
+<!-- <button class="btn" id="button2" onclick="showDiff()"> <font color="white"> Display result</font></button>
+<button class="btn" id="button3" onclick="showDiff1()"> <font color="white"> Display diff result</font></button>
+
+<button class="btn" id="button1" > <a href="download/"><font color="white"> Download result file</font></a></button> -->
+
+<div style="display:block;" class="container-fluid" id="includedContent2">
+    {%if row%}
+    <table border="1" class="table table-striped">
+        <tr>
+            <th>correlationID</th>
+            <th>Eventname</th>
+            <th>sourcenamespace</th>
+            <th>targetnamespace</th>
+            <th>parentcorrelationid</th>
+        </tr>
+        {% for ele in data %}
+        <tr>
+            {% for k,v in ele.items%}
+            <td>{{v}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    {%endif%}
+</div>
+
+<div style="display:block;" class="container-fluid" id="includedContent3">{%if column%}
+    <table border="1" class="table table-striped">
+        <tr>
+            {%for elem in check%}
+            <th>{{elem}}</th>
+            {%endfor%}
+        </tr>
+        {% for ele in data %}
+        <tr>
+            {% for k,v in ele.items%}
+            <td>{{v}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</div>
+<div class="container-fluid" id="includedContent1" style="display:none;">
+    <ul>
+        <li class="active">
+            <button class="btn btn-info btn-xs"><a data-toggle="tab" style="color:white" onclick="Display1()">Column-wise</a>
+            </button>
+        </li>
+        <li style="margin-left:2%">
+            <button class="btn btn-info btn-xs"><a data-toggle="tab" style="color:white"
+                                                   onclick="Display2()">Row-wise</a></button>
+        </li>
+    </ul>
+</div>
+<div id="column" style="display:none; margin-left:2%;">
+    <form action="/GIDP/Filter" method="post">{% csrf_token %}
+        <div class="checkbox">
+            <label><input type="checkbox" name="input" value="correlationID">CorrelationID</label>
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox" name="input" value="Eventname">Event Name</label>
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox" name="input" value="sourcenamespace">SourceNameSpace</label>
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox" name="input" value="targetnamespace">TargetNameSpace</label>
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox" name="input" value="parentcorrelationid">ParentCorrelationID</label>
+        </div>
+        <button type="submit" class="btn btn-info ">Filter</button>
+
+    </form>
+</div>
+<div id="row" style="display:none;">
+    <form action="/GIDP/Filter" method="post">{% csrf_token %}
+        <div class="form-group">
+            <label for="usr">Condition:</label>
+            <input type="text" class="form-control" name="cond" id="usr">
+
+        </div>
+        <center>
+            <button type="submit" class="btn btn-info">Filter</button>
+        </center>
+    </form>
+</div>
+<style>
+  #includedContent {
+    margin-top: 48px;
+    width: 100%;
+    display:block;
+  }
+  #includedContent1 {
+    width: 100%;
+    display: none;
+  }
+
+</style>
+
+
+<div class="sub-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p>Copyright &copy; 2020 NTT DATA.Ltd.
+
+                    <a rel="nofollow noopener" href="https://templatemo.com" target="_blank"></a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- partial -->
+<script src="{% static './script.js' %}"></script>
+<script>
+    function showDiff(){
+     // includedContent
+     //includedContent1
+
+     document.getElementById("includedContent2").style.display = "block";
+      document.getElementById("includedContent1").style.display = "none";
+
+    }
+    function Display1(){
+
+     document.getElementById("column").style.display = "block";
+      document.getElementById("row").style.display = "none";
+
+    }
+     function Display2(){
+
+     document.getElementById("column").style.display = "none";
+      document.getElementById("row").style.display = "block";
+
+    }
+
+</script>
+
+<script>
+    function showDiff1(){
+
+
+    document.getElementById("includedContent3").style.display = "none";
+    document.getElementById("includedContent1").style.display = "block";
+
+    document.getElementById("includedContent2").style.display = "none";
+
+
+    }
+
+
+</script>
+<script>
+var diff = document.querySelectorAll('table[id] td[nowrap=nowrap]');
+for(var i = 0; i < diff.length; i ++) {if(diff[i].innerHTML.length < 32) {
+    var newDiff = 32 - diff[i].innerHTML.length;
+    for(var j = 0; j < newDiff; j ++) {
+      diff[i].innerHTML = diff[i].innerHTML + "&nbsp;"
+    }
+  }
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,256 @@
+<html>
+{% extends 'base.html' %}
+<head>
+    <style>
+        .modal-content {
+    /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+    width:950px;
+     max-width:1500px; /* For Bootstrap 4 - to avoid the modal window stretching full width */
+    height:inherit;
+    /* To center horizontally */
+    margin: 0 auto;
+    pointer-events:all;
+}
+
+.modal-dialog{
+    overflow-y: initial !important
+}
+.modal-body{
+    height: 80vh;
+    overflow-y: auto;
+}
+
+    </style>
+</head>
+<body>
+
+{% block content %}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Salesforce Transaction Logs</h1>
+        <!--<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                class="fas fa-download fa-sm text-white-50"></i> Download </a>-->
+    </div>
+</div>
+<div class="row">
+    <div class="col-xl-2dot4 col-md-2dot4 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2" style="margin-left:10%;">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Last Updated
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">2020-7-16 18:30:53</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-2dot4 col-md-2dot4 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">Web UI</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fa fa-link fa-2x text-gray-300"></i>
+                    </div>
+                    <a href="" class="stretched-link" onClick="return oneFunction();"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Earnings (Annual) Card Example -->
+    <div class="col-xl-2dot4 col-md-2dot4 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1"></div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">Kibana Dashboard</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fa fa-link fa-2x text-gray-300"></i>
+                    </div>
+                    <a href="" class="stretched-link" onClick="return twoFunction();"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tasks Card Example -->
+    <div class="col-xl-2dot4 col-md-2dot4 mb-4">
+        <div class="card border-left-info shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1"></div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">Failures</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fa fa-link fa-2x text-gray-300"></i>
+                    </div>
+                    <a href="" class="stretched-link" onClick="return threeFunction();"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pending Requests Card Example -->
+    <div class="col-xl-2dot4 col-md-2dot4 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2" style="margin-right:10%;">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1"></div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">Transaction Type</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fa fa-link fa-2x text-gray-300"></i>
+                    </div>
+                    <a href="" class="stretched-link" onClick="return fourFunction();"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<style type="text/css">
+    iframe { border: 0; width: 100%; height: 65%; }
+
+
+</style>
+
+<div id="one">
+    <div class="card shadow mb-4" style="width:98%;margin-left:1%;">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Salesforce Transaction Logs</h6>
+        </div>
+        <div class="card-body">
+
+
+            <table id="table_id" class="order-column">
+                <thead>
+                <tr>
+                    <th>CorrelationID</th>
+                    <th>TransactionType</th>
+                    <th>Date</th>
+                    <th>ObjectLink</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for ele in data %}
+                <tr>
+                    {% for k,v in ele.items%}
+                    {%ifnotequal k fail %}
+                    <td>{{v}}</td>
+                    {%else%}
+             <td style="text-decoration: underline;color:blue;"><a onclick="alert('{{v}}')">object</a></td>
+                    {% endifnotequal%}
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<div id="two">
+    <iframe src="http://10.235.21.123:5601/app/visualize#/edit/4129d3e0-0986-11eb-b864-79745279dae1?embed=true&_g=(filters%3A!()%2CrefreshInterval%3A(pause%3A!t%2Cvalue%3A0)%2Ctime%3A(from%3Anow-1y%2Cto%3Anow))"></iframe>
+</div>
+
+<div id="three">
+    <iframe src="http://10.235.21.123:5601/app/dashboards#/view/8fd41540-0a04-11eb-b864-79745279dae1?embed=true&_g=(filters%3A!()%2CrefreshInterval%3A(pause%3A!t%2Cvalue%3A0)%2Ctime%3A(from%3Anow-1y%2Cto%3Anow))" height="600" width="800"></iframe>
+</div>
+
+<div id="four">
+    <iframe src="http://10.235.21.123:5601/app/dashboards#/view/e2812c90-0a06-11eb-b864-79745279dae1?embed=true&_g=(filters%3A!()%2CrefreshInterval%3A(pause%3A!t%2Cvalue%3A0)%2Ctime%3A(from%3Anow-1y%2Cto%3Anow))" height="600" width="800"></iframe>
+</div>
+
+<script>
+document.getElementById('one').style.display = 'block';
+document.getElementById('two').style.display = 'none';
+document.getElementById('three').style.display = 'none';
+document.getElementById('four').style.display = 'none';
+
+function oneFunction() {
+var x = document.getElementById("one");
+var y = document.getElementById("two");
+var z = document.getElementById("three");
+var w = document.getElementById("four");
+
+
+x.style.display = "block";
+y.style.display = "none";
+z.style.display = "none";
+w.style.display = "none";
+return false;
+
+}
+
+function twoFunction() {
+var x = document.getElementById("one");
+var y = document.getElementById("two");
+var z = document.getElementById("three");
+var w = document.getElementById("four");
+
+
+x.style.display = "none";
+y.style.display = "block";
+z.style.display = "none";
+w.style.display = "none";
+return false;
+
+}
+
+function threeFunction() {
+var x = document.getElementById("one");
+var y = document.getElementById("two");
+var z = document.getElementById("three");
+var w = document.getElementById("four");
+
+
+x.style.display = "none";
+y.style.display = "none";
+z.style.display = "block";
+w.style.display = "none";
+return false;
+
+}
+
+function fourFunction() {
+var x = document.getElementById("one");
+var y = document.getElementById("two");
+var z = document.getElementById("three");
+var w = document.getElementById("four");
+
+
+x.style.display = "none";
+y.style.display = "none";
+z.style.display = "none";
+w.style.display = "block";
+return false;
+
+}
+
+
+
+
+</script>
+
+{% endblock %}
+</body>
+
+</html>
